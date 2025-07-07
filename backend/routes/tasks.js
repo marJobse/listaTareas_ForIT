@@ -20,7 +20,7 @@ const taskList = [
     id: 3,
     title: "Implementar endpoints CRUD",
     descripcion: "3",
-    completed: false,
+    completed: true,
     createdAt: "07/07/2025",
   },
   {
