@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const taskList = [
   {
     id: 1,
@@ -32,18 +33,38 @@ const taskList = [
 ];
 
 //http://localhost:3002/api/tasks/
+router.get("/obtenerTasks", (req, res) => {
+  try {
+    console.log(taskList);
+    res.send(taskList);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// GET por ID
+router.get("/obtenerTask/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const task = taskList.find((t) => t.id === id);
+
+  if (task) {
+    res.json(task);
+  } else {
+    res.status(404).json({ error: "Tarea no encontrada" });
+  }
+});
 
 // GET
-router.get("/", (req, res) => res.send(taskList));
+//router.get("/", (req, res) => res.send(taskList));
 
 // POST
 router.post("/", (req, res) => {
   try {
     const { id, title, descripcion } = req.body; // campos que se ingresan con valor. los demas tienen valor por defecto
     const newTask = {
-      id: id, // que sea autoincremental
-      title: title,
-      descripcion: descripcion,
+      id: taskList.length > 0 ? taskList[taskList.length - 1].id + 1 : 1,
+      title,
+      descripcion,
       completed: false,
       createdAt: new Date().toISOString().split("T")[0],
     };
