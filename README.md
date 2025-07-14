@@ -78,7 +78,7 @@ npm start
 
 <img width="777" height="950" alt="image" src="https://github.com/user-attachments/assets/c440a98f-2854-49b8-a9a7-1f4706ce33c0" />
 
-## Update🔄
+## Update
 
 <img width="795" height="753" alt="image" src="https://github.com/user-attachments/assets/322f2e84-bda2-441a-a106-481ce567f1ba" />
 <img width="800" height="750" alt="image" src="https://github.com/user-attachments/assets/9d5cb229-014a-4875-9669-6eba01554db3" />
@@ -92,9 +92,9 @@ npm start
 Soy Mariana Verónica Jobse, analista programadora universitaria de la Universidad Nacional de La Plata.
 Espero que disfruten del proyecto tanto como yo disfrute de hacerlo.
 
---
+Gracias por la oportunidad ✨
 
-Gracias por la oportunidad.
+---
 
 
 
