@@ -40,6 +40,7 @@ Para ejecutar el proyecto localmente:
 EN CADA CARPETA: 
 
 2. Configurar las variables de entorno, creando un archivo .env en la raíz 
+
 Backend
 ```
 PORT=3002
@@ -49,12 +50,12 @@ Frontend
 REACT_APP_API_URL=http://localhost:3002/api/tasks
 ```
 
-3. Instalar las dependencias con npm install
+3. Instalar las dependencias 
 ```
 npm install
 ```
 
-4. Ejecutar la aplicación con npm start
+4. Ejecutar la aplicación 
 ```
 npm start
 ```
