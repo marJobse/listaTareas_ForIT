@@ -10,10 +10,10 @@
   - [Screenshots del CRUD en funcionamiento](#screenshots-del-crud-en-funcionamiento)
   - [Programadora del proyecto](#programadora-del-proyecto)
 
-## Introducción 📖
+## 📖 Introducción 
 Esta aplicacióm permite realizar operaciones CRUD sobre una lista de tareas, demostrando conocimientos fundamentales de Git, JavaScript, Node.js y React.
 
-## Indicaciones del proyecto 🔍 
+## 🔍 Indicaciones del proyecto  
 - Consta de dos carpetas, una para el backend con Express y una para el frontend con React.
 - Utiliza un array en memoria como almacenamiento temporal.
 - Implementa manejo básico de errores.
