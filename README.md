@@ -39,7 +39,8 @@ Para ejecutar el proyecto localmente:
 
 1. Cloná este repositorio `git clone https://github.com/marJobse/listaTareas_ForIT.git`
    
-EN CADA CARPETA: 
+
+En cada carpeta:
 
 2. Configurar las variables de entorno, creando un archivo .env en la raíz 
 
@@ -87,8 +88,11 @@ npm start
 <img width="808" height="932" alt="image" src="https://github.com/user-attachments/assets/f9ccb6c3-c63c-47f9-8707-f541e986c2ef" />
 
 ## Programadora del proyecto 
+
 Soy Mariana Verónica Jobse, analista programadora universitaria de la Universidad Nacional de La Plata.
 Espero que disfruten del proyecto tanto como yo disfrute de hacerlo.
+
+--
 
 Gracias por la oportunidad.
 
