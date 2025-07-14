@@ -9,7 +9,6 @@
 
 ## Introducción
 Esta aplicacióm permite realizar operaciones CRUD sobre una lista de tareas, demostrando conocimientos fundamentales de Git, JavaScript, Node.js y React.
-Utiliza un array en memoria como almacenamiento temporal
 
 ## Indicaciones del proyecto
 - Consta de dos carpetas, una para el backend con Express y una para el frontend con React.
@@ -38,11 +37,13 @@ Para ejecutar el proyecto localmente:
 En cada carpeta (backend y frontend):
 2. Configurar las variables de entorno, creando un archivo .env en la raíz de la 
 
-```Backend
+Backend
+```
 PORT=3002
 ```
 
-```Frontend
+Frontend
+```
 REACT_APP_API_URL=http://localhost:3002/api/tasks
 ```
      
