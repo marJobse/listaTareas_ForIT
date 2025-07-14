@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <nav
         className="navbar navbar-expand-lg navbar-dark"
-        style={{ backgroundColor: "#ffc107", position: "relative" }}
+        style={{ backgroundColor: "#0d6efd" }} // azul Bootstrap moderno
       >
         <div className="container">
           <a className="navbar-brand" href="/">

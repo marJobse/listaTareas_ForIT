@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import axios from "axios";
+import Swal from "sweetalert2";
 
 function TaskItem({ task }) {
   async function borrarTask(id) {
@@ -8,11 +8,10 @@ function TaskItem({ task }) {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("Error al borrar");
-      const data = await res.text(); // o .json() si el backend devuelve JSON
-      alert("Tarea borrada correctamente");
+      Swal.fire("La tarea se borro exitosamente");
     } catch (err) {
       console.error(err);
-      alert("Error al borrar la tarea");
+      Swal.fire("Error al borrar la tarea");
     }
   }
 

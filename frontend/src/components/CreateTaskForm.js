@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 function CreateTaskForm() {
   const [title, setTitle] = useState("");
@@ -22,11 +23,11 @@ function CreateTaskForm() {
       if (!res.ok) throw new Error("Error al crear la tarea");
 
       const resultado = await res.json();
-      alert("Tarea creada correctamente");
+      Swal.fire("La tarea se creo exitosamente");
       console.log(resultado);
     } catch (err) {
       console.error(err);
-      alert("Error al crear la tarea");
+      Swal.fire("Se produjo un error al crear la tarea");
     }
   }
   return (

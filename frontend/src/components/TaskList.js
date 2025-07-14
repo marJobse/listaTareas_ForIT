@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
 import TaskItem from "./TaskItem";
-import axios from "axios";
 
 function TaskList() {
   const [dataTask, setdataTask] = useState([]); // para traer el objeto completo
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/obtenerTasks`)
+    fetch(`${process.env.REACT_APP_API_URL}/obtenerTasks`)
       .then((res) => {
-        console.log(res.data);
-        setdataTask(res.data);
+        if (!res.ok) {
+          throw new Error("Error al obtener las tareas");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setdataTask(data);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
-  // Mapear listaproducto en objeto producto
+  // Mapear arreglo en objeto
   const listaTareas = dataTask.map((task) => {
     return (
       <div>

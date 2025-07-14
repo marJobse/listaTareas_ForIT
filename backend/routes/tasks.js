@@ -33,19 +33,20 @@ const taskList = [
 ];
 
 //http://localhost:3002/api/tasks/
+
+//GET
 router.get("/obtenerTasks", (req, res) => {
   try {
     console.log(taskList);
-    res.send(taskList);
+    res.send(taskList); // lista de tareas
   } catch (err) {
     res.status(500).send(err);
   }
 });
 
-// GET por ID
 router.get("/obtenerTask/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  const task = taskList.find((t) => t.id === id);
+  const task = taskList.find((t) => t.id === id); // tarea por id
 
   if (task) {
     res.json(task);
@@ -53,9 +54,6 @@ router.get("/obtenerTask/:id", (req, res) => {
     res.status(404).json({ error: "Tarea no encontrada" });
   }
 });
-
-// GET
-//router.get("/", (req, res) => res.send(taskList));
 
 // POST
 router.post("/", (req, res) => {
@@ -68,7 +66,7 @@ router.post("/", (req, res) => {
       completed: false,
       createdAt: new Date().toISOString().split("T")[0],
     };
-    taskList.push(newTask); // agrega al arreglo de tareas
+    taskList.push(newTask); // agrega la tarea al arreglo
     res.status(201).json("Task creado correctamente", { newTask });
   } catch (error) {
     res.status(400).send("Se produjo error al crear el task.");
@@ -80,8 +78,9 @@ router.put("/:id", (req, res) => {
   try {
     const { id } = req.params;
     const { title, descripcion, completed, createdAt } = req.body;
-    const task = taskList.find((t) => t.id === parseInt(id));
+    const task = taskList.find((t) => t.id === parseInt(id)); // busca tarea con ese id
     if (task) {
+      // si existe esa tarea, edita los campos (excepto id)
       // el id es lo unico que no se edita
       task.title = title ?? task.title;
       task.descripcion = descripcion ?? task.descripcion;
@@ -90,6 +89,7 @@ router.put("/:id", (req, res) => {
       task.createdAt = createdAt ?? task.createdAt;
       res.json(task);
     } else {
+      // si no existe tarea
       res.status(404).json({ error: "Tarea no encontrada." });
     }
   } catch (error) {
@@ -100,15 +100,14 @@ router.put("/:id", (req, res) => {
 // DELETE
 router.delete("/:id", (req, res) => {
   try {
-    //const { id } = req.params;
     const id = parseInt(req.params.id);
-    const position = taskList.findIndex((task) => task.id === id);
+    const position = taskList.findIndex((task) => task.id === id); // busca la tarea por id
     if (position !== -1) {
+      // si el resultado de la busqueda no es -1, entonces la tarea se encontro
       taskList.splice(position, 1); // elimina el task en la posicion del arreglo "position"
       res.send("Tarea eliminada correctamente.");
-      //res.json(taskList);
     } else {
-      res.status(404).send(`La tarea de id:  ${id} no fue encontrada`);
+      res.status(404).send(`La tarea de id:  ${id} no fue encontrada`); // la tarea no se encontro
     }
   } catch (error) {
     res.status(500).send("Error al borrar el task");

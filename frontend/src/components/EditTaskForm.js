@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function EditTaskForm() {
   const params = useParams();
@@ -46,11 +47,10 @@ function EditTaskForm() {
       });
 
       if (!res.ok) throw new Error("Error al actualizar la tarea");
-
-      alert("Tarea actualizada correctamente");
+      Swal.fire("La tarea se edito exitosamente");
     } catch (err) {
       console.error(err);
-      alert("Error al actualizar la tarea");
+      Swal.fire("Se produjo un error al editar la tarea");
     }
   };
 
